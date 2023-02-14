@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= title %></title>
 </head>
 <body>
     <nav>
-        <!-- <% if (user) { %>
+        <a href="/recipes" <%- title === 'Home Page' ? 'class="active"' : '' %>>ALL RECIPES</a>
+        <% if (user) { %>
+            <a href="/recipes/new" <%- title === 'Add Movie' ? 'class="active"' : '' %>>ADD RECIPE</a>
             <a href="/logout">LOG OUT</a>
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %> -->
+        <% } %>
     </nav>
     <main>
     <h1><%= title %></h1>

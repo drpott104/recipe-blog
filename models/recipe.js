@@ -35,12 +35,18 @@ const recipeSchema = new Schema({
         default: 1,
         required: true
     },
-    ingredients: {
-        type: Array,
-        required: true,
-        
+    ingredientList: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Ingredient',
+        required: true
+    }],
+    private: {
+        type: Boolean,
+        default: false
     },
     reviews: [reviewSchema]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema)

@@ -1,8 +1,50 @@
 body {
-  padding: 50px;
+  height: 100%;
+  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100vh;
+}
+
+nav > a {
+  margin: 10px;
+  padding: 5px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.login {
+  display: flex;
+  margin-right: 0;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+@media only screen and (min-width: 480) {
+
 }
