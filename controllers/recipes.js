@@ -1,4 +1,5 @@
-const Recipe = require('../models/review');
+const Recipe = require('../models/recipe');
+const Ingredient = require('../models/ingredient');
 
 module.exports = {
     index,
@@ -14,15 +15,11 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Recipe.findById(req.params.id)
-        .populate('ingredients')
-        .exec(function(err, recipe) {
-            
-        })
+    
 }
 
 function newRecipe(req, res) {
-
+    res.render('recipes/new', { title: 'Create New Recipe' });
 }
 
 function create(req, res) {

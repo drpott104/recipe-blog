@@ -25,3 +25,9 @@ function newIngredient(req, res) {
             });
         });
 }
+
+function create(req, res) {
+    Ingredient.create(req.body, function(err, ingredient) {
+        res.redirect('/ingredients/new')
+    });
+}
