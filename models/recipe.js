@@ -17,6 +17,10 @@ const reviewSchema = new Schema({
         ref: 'User',
         required: true
     },
+    directions: {
+        type: String,
+        required: true,
+    },
     userName: String,
     userAvatar: String
 }, {
@@ -35,14 +39,22 @@ const recipeSchema = new Schema({
         default: 1,
         required: true
     },
-    ingredientList: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Ingredient',
+    ingredients: {
+        type: String,
         required: true
-    }],
+    },
     private: {
         type: Boolean,
         default: false
+    },
+    category: {
+        type: String,
+        enum: ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Sauces'],
+        required: true
+    },
+    directions: {
+        type: String,
+        required: true
     },
     reviews: [reviewSchema]
 }, {

@@ -37,6 +37,10 @@ nav > a.active {
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
+#ingredients {
+  display: flex
+}
+
 a {
   color: #00B7FF;
 }

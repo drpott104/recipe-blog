@@ -10,9 +10,9 @@
 </head>
 <body>
     <nav>
-        <a href="/recipes/index">ALL RECIPES</a>
+        <a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>ALL RECIPES</a>
         <% if (user) { %>
-            <a href="/recipes/new">ADD RECIPE</a>
+            <a href="/recipes/new" <%- title === 'Create New Movie' ? 'class="active"' : '' %>>ADD RECIPE</a>
             <a href="/logout">LOG OUT</a>
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

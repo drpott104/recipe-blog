@@ -4,7 +4,13 @@
     <label>Title:</label>
     <input type="text" name="title">
     <label>Category:</label>
-    <input type="text" name="category">
+    <select name="category">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Sauces">Sauces</option>
+    </select>
     <label>Difficulty:</label>
     <select name="difficulty">
         <option value="1">1</option>
@@ -13,15 +19,10 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
-    <label>Ingredients:</label>
-    <input type="text" name="quantity">
-    <select name="unit">
-        <option value="each">each</option>
-        <option value="cups">cups</option>
-        <option value="Tbsp">Tbsp</option>
-        <option value="tsp">tsp</option>
-    </select>
-    <input type="text" name="ingredients">
+    <label>Ingredients:</br></label>
+    <textarea name="ingredients"></textarea>
+    <label>Directions:</label>
+    <textarea name="directions"></textarea>
     <input type="submit" value="Add Recipe">
 </form>
 
