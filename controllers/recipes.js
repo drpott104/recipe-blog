@@ -70,7 +70,6 @@ async function edit(req, res, next) {
 }
 
 function update(req, res) {
-    console.log('active')
     Recipe.findOneAndUpdate({_id: req.params.id},
         req.body,
         {new: true},
