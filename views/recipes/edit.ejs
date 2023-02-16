@@ -1,4 +1,9 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
+<form action="/recipes/<%= recipe.id %>?_method=PUT" method="POST" id="edit-page">
+    <textarea name="ingredients" id="" cols="30" rows="10"><%= recipe.ingredients %></textarea>
+    <textarea name="directions" id="" cols="30" rows="10"><%= recipe.directions %></textarea>
+    <button type="submit">Edit</button>
+</form>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

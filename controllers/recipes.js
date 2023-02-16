@@ -5,7 +5,9 @@ module.exports = {
     new: newRecipe,
     show,
     create,
-    delete: deleteRecipe
+    delete: deleteRecipe,
+    edit,
+    update
 };
 
 function index(req, res) {
@@ -46,8 +48,7 @@ function deleteRecipe(req, res, next) {
         'recipes._id': req.params.id,
         'recipes.user': req.user._id
     }).then(function(recipe) {
-        // if (!recipe) return res.redirect('/recipes')
-        console.log('active')
+        if (!recipe) return res.redirect('/recipes')
         recipe.remove(req.params.id)
         recipe.save().then(function() {
             res.redirect(`/`);
@@ -55,4 +56,26 @@ function deleteRecipe(req, res, next) {
             return next(err)
         })
     })
+}
+
+async function edit(req, res, next) {
+    try {
+        const recipe = await Recipe.findById(req.params.id)
+        .populate("ingredients").populate("directions").exec();
+        res.render('recipes/edit', { title: 'Update Recipe', recipe })
+    } catch(err) {
+        next(err);
+    }
+
+}
+
+function update(req, res) {
+    console.log('active')
+    Recipe.findOneAndUpdate({_id: req.params.id},
+        req.body,
+        {new: true},
+        function(err, recipe) {
+            if (err || !recipe) return res.redirect('/recipes');
+            res.redirect(`/recipes/${recipe._id}`)
+        })
 }

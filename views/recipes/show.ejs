@@ -10,7 +10,10 @@
     <div><strong>Directions:</strong> <%= recipe.directions %></div>
     <div>
         <% if (user?._id.equals(recipe.user)) { %>
-            <a href="./edit">Edit</a>
+            <!-- <a href="./edit">Edit</a> -->
+            <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+                <button type="submit">Edit</button>
+            </form>
             <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
             </form>
