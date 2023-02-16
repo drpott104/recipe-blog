@@ -39,6 +39,12 @@ nav > a.active {
   display: flex;
 }
 
+#edit-page {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+}
+
 #new-form {
   display: grid;
   grid-gap: 10px;

@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
+<h1>What are we making today?</h1>
+<h2><%= recipe.title %></h2>
 
 <section id="show-page">
-    <div><strong>Title:</strong> <%= recipe.title %></div>
+    <div><strong>Recipe:</strong> <%= recipe.title %></div>
     <div><strong>Category:</strong> <%= recipe.category %></div>
     <div><strong>Difficulty:</strong> <%= recipe.difficulty %></div>
     <div><strong>Ingredients:</strong> <%= recipe.ingredients %></div>

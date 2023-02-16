@@ -12,7 +12,7 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
-        res.render('recipes/', { title: 'All Recipes', recipes})
+        res.render('recipes/', { title: 'Browse Recipes', recipes})
     })
 }
 
@@ -44,19 +44,13 @@ function create(req, res) {
 }
 
 function deleteRecipe(req, res, next) {
-    Recipe.findOne({
-        'recipes._id': req.params.id,
-        'recipes.user': req.user._id
-    }).then(function(recipe) {
-        if (!recipe) return res.redirect('/recipes')
-        recipe.remove(req.params.id)
-        recipe.save().then(function() {
-            res.redirect(`/`);
-        }).catch(function(err) {
-            return next(err)
+    Recipe.findById(req.params.id)
+        .then(function(recipe) {
+            recipe.deleteOne();
+            res.redirect('/recipes')
         })
-    })
-}
+    }
+
 
 async function edit(req, res, next) {
     try {

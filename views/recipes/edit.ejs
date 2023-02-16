@@ -1,7 +1,17 @@
 <%- include('../partials/header') %>
 
 <form action="/recipes/<%= recipe.id %>?_method=PUT" method="POST" id="edit-page">
+    <label>Categories:</label>
+    <select name="category">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Sauces">Sauces</option>
+    </select>
+    <label>Ingredients:</label>
     <textarea name="ingredients" id="" cols="30" rows="10"><%= recipe.ingredients %></textarea>
+    <label>Directions:</label>
     <textarea name="directions" id="" cols="30" rows="10"><%= recipe.directions %></textarea>
     <button type="submit">Edit</button>
 </form>
