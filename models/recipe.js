@@ -17,10 +17,6 @@ const reviewSchema = new Schema({
         ref: 'User',
         required: true
     },
-    directions: {
-        type: String,
-        required: true,
-    },
     userName: String,
     userAvatar: String
 }, {
@@ -54,6 +50,11 @@ const recipeSchema = new Schema({
     },
     directions: {
         type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     reviews: [reviewSchema]

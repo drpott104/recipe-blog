@@ -31,6 +31,14 @@ nav > a.active {
   cursor: default;
 }
 
+#show-page > div {
+  margin: 10px;
+}
+#show-page > div:last-child {
+  margin: 10px;
+  display: flex;
+}
+
 #new-form {
   display: grid;
   grid-gap: 10px;

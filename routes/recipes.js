@@ -7,5 +7,6 @@ router.get('/', recipesCtrl.index);
 router.get('/new', ensureLoggedIn, recipesCtrl.new);
 router.get('/:id', recipesCtrl.show);
 router.post('/', ensureLoggedIn, recipesCtrl.create);
+router.delete('/:id', ensureLoggedIn, recipesCtrl.delete);
 
 module.exports = router;

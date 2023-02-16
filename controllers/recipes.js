@@ -1,5 +1,4 @@
 const Recipe = require('../models/recipe');
-const Ingredient = require('../models/ingredient');
 
 module.exports = {
     index,
@@ -29,6 +28,9 @@ function newRecipe(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key]
     }
@@ -44,10 +46,11 @@ function deleteRecipe(req, res, next) {
         'recipes._id': req.params.id,
         'recipes.user': req.user._id
     }).then(function(recipe) {
-        if (!recipe) return res.redirect('/recipes')
+        // if (!recipe) return res.redirect('/recipes')
+        console.log('active')
         recipe.remove(req.params.id)
         recipe.save().then(function() {
-            res.redirect(`/recipes/${recipe._id}`);
+            res.redirect(`/`);
         }).catch(function(err) {
             return next(err)
         })
