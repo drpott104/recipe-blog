@@ -13,7 +13,8 @@ https://i.imgur.com/2GQk5NH.png
 Project link:
 https://steal-my-recipes.heroku.com
 
-Wireframe + ERD
+Wireframe + ERD:
+https://trello.com/b/yE1M7z11/project-2#
 
 ## Technolgies Used
 * MongoDB
