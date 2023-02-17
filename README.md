@@ -11,7 +11,9 @@ https://i.imgur.com/rVSj3xS.png
 https://i.imgur.com/2GQk5NH.png
 
 Project link:
-steal-my-recipes.heroku.com
+https://steal-my-recipes.heroku.com
+
+Wireframe + ERD
 
 ## Technolgies Used
 * MongoDB
