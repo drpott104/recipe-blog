@@ -2,6 +2,7 @@ const Recipe = require('../models/recipe');
 
 module.exports = {
     index,
+    subIndex,
     new: newRecipe,
     show,
     create,
@@ -13,6 +14,12 @@ module.exports = {
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
         res.render('recipes/', { title: 'Browse Recipes', recipes})
+    })
+}
+
+function subIndex(req, res) {
+    Recipe.find({}, function(err, recipes) {
+        res.render('recipes/subIndex', { title: 'Category', recipes})
     })
 }
 

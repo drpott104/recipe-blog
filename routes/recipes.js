@@ -4,6 +4,7 @@ var recipesCtrl = require('../controllers/recipes');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', recipesCtrl.index);
+router.get('/subIndex', recipesCtrl.index);
 router.get('/new', ensureLoggedIn, recipesCtrl.new);
 router.get('/:id', recipesCtrl.show);
 router.get('/:id/edit', ensureLoggedIn, recipesCtrl.edit)
