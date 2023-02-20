@@ -93,3 +93,11 @@ nav > a.active {
 h5 {
   margin-bottom: 5px;
 }
+
+
+@media (max-device-width: 480px) {
+  body > nav {
+    width: 100vw;
+    padding: 0px;
+  }
+}
